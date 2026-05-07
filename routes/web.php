@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\ProfileController;
 
-Route::get('/dashboard', [TaskController::class, 'index'])
+Route::get('/', [TaskController::class, 'index'])
     ->middleware(['auth'])
-    ->name('dashboard');
+    ->name('/dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::post('/tasks', [TaskController::class, 'store']);
